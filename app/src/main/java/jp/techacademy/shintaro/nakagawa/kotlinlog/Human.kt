@@ -3,8 +3,12 @@ package jp.techacademy.shintaro.nakagawa.kotlinlog
 import android.util.Log
 
 class Human: Animal, Thinkable {
+    //プロパティ
+    var hobby: String
+
     // 引数付きコンストラクタ
-    constructor(name: String, age: Int): super(name, age) {
+    constructor(name: String, age: Int, hobby: String): super(name, age){
+        this.hobby = hobby
     }
 
     // Animalクラスのメソッドをオーバーライド
@@ -14,7 +18,6 @@ class Human: Animal, Thinkable {
 
     // Thinkableインターフェースのメソッドをオーバーライド
     override fun think(){
-        val hobby: String = "Kotlin"
-        Log.d("kotlintest","私は" + hobby + "について考える。")
+        Log.d("kotlintest","私は" + this.hobby + "について考える。")
     }
 }
